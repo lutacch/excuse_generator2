@@ -2,22 +2,36 @@ window.onload = () => {
   document.querySelector("#excuse").innerHTML = generateExcuse();
 };
 
+randomQuien = randomNumber = Math.floor(Math.random() * 4 + 1);
+randomAccion = randomNumber = Math.floor(Math.random() * 4 + 1);
+randomQue = randomNumber = Math.floor(Math.random() * 4 + 1);
+randomCuando = randomNumber = Math.floor(Math.random() * 4 + 1);
+
 let generateExcuse = () => {
-  randomNumber = Math.floor(Math.random() * 5 + 1);
-  switch (randomNumber) {
-    case 1:
-      return "Mi perro comio mi tarea";
-    case 2:
-      return "El tren se rompio";
-    case 3:
-      return "Netflix no me dejo salir de casa";
+  let quien = ["Pepe", "Carlos", "Mi perro", "Estela", "Mi gato"];
+  let accion = ["comio", "rompio", "perdio", "incendio", "exploto"];
+  let que = ["mi tarea", "las llaves", "el auto", "la casa", "mi mochila"];
+  let cuando = [
+    "antes de ayer",
+    "justo antes de venir",
+    "hoy",
+    "hace una semana",
+    "el martes",
+  ];
 
-    case 4:
-      return "Perdi las llaves de mi casa";
-    case 5:
-      return "No tengo internet";
+  let quienIndex = [randomQuien];
+  let accionIndex = [randomAccion];
+  let queIndex = [randomQue];
+  let cuandoIndex = [randomCuando];
 
-    default:
-      break;
-  }
+  return (
+    quien[quienIndex] +
+    " " +
+    accion[accionIndex] +
+    " " +
+    que[queIndex] +
+    " " +
+    cuando[cuandoIndex]
+  );
 };
+generateExcuse();
